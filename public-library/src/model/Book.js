@@ -30,7 +30,7 @@
                 booksString = localStorage['books'];
             }
         } catch (e) {
-            alert('Error when reading from localStorage: ' + e);
+            alert('Error when reading from Local Storage: \n' + e);
             console.error(e);
         }
 
@@ -74,4 +74,57 @@
             console.log('There is no book with the ISBN ' + isbn);
         }
     }
+
+    // Save all book instances
+    Book.saveAll = function() {
+        var booksString = '',
+            error = false,
+            numberOfBooks = Object.keys(Book.instances).length;
+        
+        try {
+            booksString = JSON.stringify(Book.instances);
+            localStorage['books'] = booksString;
+        } catch (e) {
+            alert('Error when writing to Local Storage: \n' + e);
+            error = true;
+        }
+
+        if (!error) {
+            alert(numberOfBooks + ' saved');
+            console.log(numberOfBooks + ' saved');
+        }
+    };
+
+    // Create initial test data
+    Book.createTestData = function() {
+        Book.instances['006251587X'] = new Book({
+            isbn: '006251587X',
+            title: 'Weaving the Web',
+            year: 2000
+        });
+
+        Book.instances['0465026567'] = new Book({
+            isbn: '0465026567',
+            title: 'Godel, Escher, Bach',
+            year: 1999
+        });
+
+        Book.instances['0465030793'] = new Book({
+            isbn: '0465030793',
+            title: 'I Am A Strange Loop',
+            year: 2008
+        });
+
+        Book.saveAll();
+
+        console.log('Test data for books created and saved');
+    }
+
+    // Clear all test data
+    Book.clearData = function() {
+        if (confirm('Do you want to delete all book data?')) {
+            localStorage['books'] = '{}';
+            console.log('All test data cleared');
+        }
+    };
 }());
