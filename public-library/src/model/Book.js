@@ -47,4 +47,31 @@
             }
         }
     };
+
+    // Updating a book instance
+    Book.update = function(slots) {
+        var book = Book.instances[slots.isbn],
+            year = parseInt(slots.year, 10);
+        
+        if (book.title !== slots.title) {
+            book.title = slots.title;
+        }
+
+        if (book.year !== year) {
+            book.year = year;
+        }
+
+        console.log('Book ' + slots.isbn + ' updated');
+    }
+
+    // Destroying a book instance
+    Book.destroy = function(isbn) {
+        if (Book.instances[isbn]) {
+            delete Book.instances[isbn];
+            console.log('Book ' + isbn + ' deleted');
+        } else {
+            alert('There is no book with the ISBN ' + isbn);
+            console.log('There is no book with the ISBN ' + isbn);
+        }
+    }
 }());
