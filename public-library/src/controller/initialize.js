@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
-
-    var publicLibrary = {
-        model: {},
-        view: {},
-        controller: {}
-    };
-}());
+var publicLibrary = {
+    model: {},
+    view: {},
+    controller: {}
+};
