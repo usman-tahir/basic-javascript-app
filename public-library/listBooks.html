@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>List all book records</title>
+    </head>
+    <body>
+        <h1>Public Library: List all book records</h1>
+        <table id="books">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script src="src/controller/initialize.js"></script>
+        <script src="src/model/Book.js"></script>
+        <script src="src/view/listBooks.js"></script>
+        <script>
+            window.addEventListener('load', publicLibrary.view.listBooks.setupUserInterface);
+        </script>
+    </body>
+</html>
