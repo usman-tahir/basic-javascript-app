@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Update a book record</title>
+    </head>
+    <body>
+        <h1>Public Library: Update a book record</h1>
+        <form id="update">
+            <p>
+                <label>Select Book </label>
+                <select name="selectBook">
+                    <option value="" selected disabled>Select One</option>    
+                </select>        
+            </p>
+            <p>
+                <label>ISBN: </label>
+                <input type="text" name="isbn">
+            </p>
+            <p>
+                <label>Title: </label>
+                <input type="text" name="title">
+            </p>
+            <p>
+                <label>Year: </label>
+                <input type="text" name="year">    
+            </p>
+            <p>
+                <button type="button" name="commit">Save</button>
+            </p>
+        </form>
+        <nav>
+            <a href="index.html">Back to main menu</a>
+        </nav>
+
+        <script src="src/controller/initialize.js"></script>
+        <script src="src/model/Book.js"></script>
+        <script src="src/view/updateBook.js"></script>
+        <script>
+            window.addEventListener('load', publicLibrary.view.updateBook.setupUserInterface);
+        </script>
+    </body>
+</html>
