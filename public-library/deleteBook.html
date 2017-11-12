@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Delete a book record</title>
+    </head>
+    <body>
+        <h1>Public Library: Delete a book record</h1>
+        <form id="delete">
+            <p>
+                <label>Select book:</label>
+                <select name="selectBook">
+                    <option value="" selected disabled>Select a book</option>
+                </select>
+            </p>
+            <p>
+                <button type="button" name="commit">Delete</button>
+            </p>
+        </form>
+
+        <nav>
+            <a href="index.html">Back to main menu</a>
+        </nav>
+
+        <script src="src/controller/initialize.js"></script>
+        <script src="src/Model/Book.js"></script>
+        <script src="src/view/deleteBook.js"></script>
+        <script>
+            window.addEventListener('load', publicLibrary.view.deleteBook.setupUserInterface);
+        </script>
+    </body>
+</html>
