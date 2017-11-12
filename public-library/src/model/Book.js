@@ -87,7 +87,6 @@ Book.saveAll = function() {
     }
 
     if (!error) {
-        alert(numberOfBooks + ' saved');
         console.log(numberOfBooks + ' saved');
     }
 };
